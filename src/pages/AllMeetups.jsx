@@ -5,18 +5,6 @@ function AllMeetups() {
   const [isLoading, setIsLoading] = useState();
   const [loadMeetups, setLoadMeetups] = useState([]);
 
-  // allMeetups();
-
-  // const allMeets = async () => {
-  //   const res = await fetch(
-  //     "https://technomancer-events-default-rtdb.firebaseio.com/meetups.json"
-  //   );
-  //   const data = await res.json();
-  //   console.log(data);
-
-  //   return data;
-  // };
-
   async function allMeetups() {
     const res = await fetch(process.env.REACT_APP_FIREBASE_URL);
     const data = await res.json();

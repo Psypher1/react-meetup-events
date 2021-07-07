@@ -18,9 +18,7 @@ function AllMeetups() {
   // };
 
   async function allMeetups() {
-    const res = await fetch(
-      "https://technomancer-events-default-rtdb.firebaseio.com/meetups.json"
-    );
+    const res = await fetch(process.env.REACT_APP_FIREBASE_URL);
     const data = await res.json();
     console.log(data);
 

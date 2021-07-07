@@ -29,6 +29,7 @@ function AllMeetups() {
     setIsLoading(true);
     allMeetups().then((data) => {
       const meetups = [];
+      let sortedMeetups = [];
 
       for (const key in data) {
         const meetup = {
@@ -37,10 +38,12 @@ function AllMeetups() {
         };
 
         meetups.push(meetup);
+
+        sortedMeetups = meetups.reverse();
       }
 
       setIsLoading(false);
-      setLoadMeetups(meetups);
+      setLoadMeetups(sortedMeetups);
     });
 
     // fetch(
